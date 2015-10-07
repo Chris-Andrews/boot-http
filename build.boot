@@ -1,13 +1,13 @@
 (set-env!
  :source-paths #{"src" "test"}
- :dependencies '[[org.clojure/clojure     "1.7.0"  :scope "provided"]
+ :dependencies '[[org.clojure/tools.nrepl "0.2.11"]
+                 [org.clojure/clojure     "1.7.0"  :scope "provided"]
                  [boot/core               "2.3.0"  :scope "provided"]
-                 [adzerk/bootlaces        "0.1.12"  :scope "test"]
+                 [adzerk/bootlaces        "0.1.12" :scope "test"]
                  [adzerk/boot-test        "1.0.4"  :scope "test"]
                  [ring/ring-jetty-adapter "1.4.0"  :scope "test"]
                  [ring/ring-core          "1.4.0"  :scope "test"]
-                 [ring/ring-devel         "1.4.0"  :scope "test"]
-                 [org.clojure/tools.nrepl "0.2.11" :scope "test"]])
+                 [ring/ring-devel         "1.4.0"  :scope "test"]])
 
 (require
  '[adzerk.bootlaces :refer :all] ;; tasks: build-jar push-snapshot push-release
@@ -19,7 +19,7 @@
 (bootlaces! +version+)
 
 (task-options!
- pom {:project     'pandeiro/boot-http
+ pom {:project     'chris-andrews/boot-http
       :version     +version+
       :description "Boot task to serve HTTP."
       :url         "https://github.com/pandeiro/boot-http"
